@@ -12,12 +12,38 @@
         <!-- Grass floor -->
         <a-plane position="0 0 -4" rotation="-90 0 0" width="20" height="20" color="#228B22"></a-plane>
         
-        <!-- Simple trees -->
+        <!-- More trees -->
         <a-cylinder position="-3 1 -3" radius="0.2" height="2" color="#8B4513"></a-cylinder>
         <a-sphere position="-3 2.5 -3" radius="1" color="#228B22"></a-sphere>
         
         <a-cylinder position="3 1 -3" radius="0.2" height="2" color="#8B4513"></a-cylinder>
         <a-sphere position="3 2.5 -3" radius="1" color="#228B22"></a-sphere>
+        
+        <a-cylinder position="-5 1 -5" radius="0.2" height="2" color="#8B4513"></a-cylinder>
+        <a-sphere position="-5 2.5 -5" radius="1" color="#228B22"></a-sphere>
+        
+        <a-cylinder position="5 1 -5" radius="0.2" height="2" color="#8B4513"></a-cylinder>
+        <a-sphere position="5 2.5 -5" radius="1" color="#228B22"></a-sphere>
+        
+        <!-- Triforce (made with triangles) -->
+        <a-entity position="0 3 -2">
+            <!-- Top triangle -->
+            <a-triangle vertex-a="0 0.5 0" vertex-b="-0.3 -0.3 0" vertex-c="0.3 -0.3 0" color="#FFD700"></a-triangle>
+            <!-- Bottom left triangle -->
+            <a-triangle vertex-a="-0.3 -0.3 0" vertex-b="-0.6 -0.8 0" vertex-c="0 -0.8 0" color="#FFD700"></a-triangle>
+            <!-- Bottom right triangle -->
+            <a-triangle vertex-a="0.3 -0.3 0" vertex-b="0 -0.8 0" vertex-c="0.6 -0.8 0" color="#FFD700"></a-triangle>
+        </a-entity>
+        
+        <!-- Rupees (gems) -->
+        <a-box position="-2 0.5 -1" width="0.3" height="0.6" depth="0.1" color="#00FF00" rotation="0 0 45"></a-box>
+        <a-box position="2 0.5 -1" width="0.3" height="0.6" depth="0.1" color="#0000FF" rotation="0 0 45"></a-box>
+        <a-box position="0 0.5 -3" width="0.3" height="0.6" depth="0.1" color="#FF0000" rotation="0 0 45"></a-box>
+        
+        <!-- Heart container -->
+        <a-sphere position="4 1.5 -2" radius="0.3" color="#FF69B4"></a-sphere>
+        <a-sphere position="4.2 1.5 -2" radius="0.3" color="#FF69B4"></a-sphere>
+        <a-box position="4.1 1.2 -2" width="0.4" height="0.2" depth="0.1" color="#FF69B4"></a-box>
         
         <!-- Starting position marker -->
         <a-box position="0 0.5 -2" width="1" height="1" depth="1" color="#FFD700"></a-box>
