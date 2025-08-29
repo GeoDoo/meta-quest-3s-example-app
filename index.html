@@ -1,52 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My VR Space</title>
+    <title>Zelda VR Space</title>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script>
 </head>
 <body>
-    <a-scene>
-        <!-- Zelda-style sky -->
-        <a-sky color="#87CEEB"></a-sky>
+    <a-scene environment="preset: forest; groundTexture: grass; groundColor: #2d5016; skyColor: #87CEEB; horizonColor: #87CEEB; fog: 0.3">
         
-        <!-- Grass floor -->
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="20" height="20" color="#228B22"></a-plane>
-        
-        <!-- More trees -->
-        <a-cylinder position="-3 1 -3" radius="0.2" height="2" color="#8B4513"></a-cylinder>
-        <a-sphere position="-3 2.5 -3" radius="1" color="#228B22"></a-sphere>
-        
-        <a-cylinder position="3 1 -3" radius="0.2" height="2" color="#8B4513"></a-cylinder>
-        <a-sphere position="3 2.5 -3" radius="1" color="#228B22"></a-sphere>
-        
-        <a-cylinder position="-5 1 -5" radius="0.2" height="2" color="#8B4513"></a-cylinder>
-        <a-sphere position="-5 2.5 -5" radius="1" color="#228B22"></a-sphere>
-        
-        <a-cylinder position="5 1 -5" radius="0.2" height="2" color="#8B4513"></a-cylinder>
-        <a-sphere position="5 2.5 -5" radius="1" color="#228B22"></a-sphere>
-        
-        <!-- Triforce (made with triangles) -->
-        <a-entity position="0 3 -2">
-            <!-- Top triangle -->
-            <a-triangle vertex-a="0 0.5 0" vertex-b="-0.3 -0.3 0" vertex-c="0.3 -0.3 0" color="#FFD700"></a-triangle>
-            <!-- Bottom left triangle -->
-            <a-triangle vertex-a="-0.3 -0.3 0" vertex-b="-0.6 -0.8 0" vertex-c="0 -0.8 0" color="#FFD700"></a-triangle>
-            <!-- Bottom right triangle -->
-            <a-triangle vertex-a="0.3 -0.3 0" vertex-b="0 -0.8 0" vertex-c="0.6 -0.8 0" color="#FFD700"></a-triangle>
+        <!-- Temple structure -->
+        <a-entity position="0 0 -8">
+            <!-- Temple base -->
+            <a-box position="0 1 -2" width="6" height="2" depth="4" color="#8B7355"></a-box>
+            <!-- Temple roof -->
+            <a-cone position="0 3 -2" radius-bottom="3.5" radius-top="0" height="2" color="#654321"></a-cone>
+            <!-- Temple entrance -->
+            <a-box position="0 1.5 -4" width="2" height="3" depth="0.5" color="#654321"></a-box>
         </a-entity>
         
-        <!-- Rupees (gems) -->
-        <a-box position="-2 0.5 -1" width="0.3" height="0.6" depth="0.1" color="#00FF00" rotation="0 0 45"></a-box>
-        <a-box position="2 0.5 -1" width="0.3" height="0.6" depth="0.1" color="#0000FF" rotation="0 0 45"></a-box>
-        <a-box position="0 0.5 -3" width="0.3" height="0.6" depth="0.1" color="#FF0000" rotation="0 0 45"></a-box>
+        <!-- Stone path to temple -->
+        <a-plane position="0 0.01 -6" rotation="-90 0 0" width="2" height="4" color="#696969" repeat="4 1"></a-plane>
+        
+        <!-- Triforce pedestal -->
+        <a-cylinder position="0 0.5 -2" radius="1" height="1" color="#DAA520"></a-cylinder>
+        <a-entity position="0 2 -2">
+            <!-- Triforce made with proper geometry -->
+            <a-triangle vertex-a="0 0.4 0" vertex-b="-0.3 -0.2 0" vertex-c="0.3 -0.2 0" color="#FFD700" material="shader: flat"></a-triangle>
+            <a-triangle vertex-a="-0.3 -0.2 0" vertex-b="-0.6 -0.6 0" vertex-c="0 -0.6 0" color="#FFD700" material="shader: flat"></a-triangle>
+            <a-triangle vertex-a="0.3 -0.2 0" vertex-b="0 -0.6 0" vertex-c="0.6 -0.6 0" color="#FFD700" material="shader: flat"></a-triangle>
+        </a-entity>
+        
+        <!-- Trees with better positioning -->
+        <a-entity position="-4 0 -3">
+            <a-cylinder position="0 1 0" radius="0.3" height="2" color="#8B4513"></a-cylinder>
+            <a-sphere position="0 2.5 0" radius="1.2" color="#228B22"></a-sphere>
+        </a-entity>
+        
+        <a-entity position="4 0 -3">
+            <a-cylinder position="0 1 0" radius="0.3" height="2" color="#8B4513"></a-cylinder>
+            <a-sphere position="0 2.5 0" radius="1.2" color="#228B22"></a-sphere>
+        </a-entity>
+        
+        <a-entity position="-6 0 -6">
+            <a-cylinder position="0 1 0" radius="0.3" height="2" color="#8B4513"></a-cylinder>
+            <a-sphere position="0 2.5 0" radius="1.2" color="#228B22"></a-sphere>
+        </a-entity>
+        
+        <a-entity position="6 0 -6">
+            <a-cylinder position="0 1 0" radius="0.3" height="2" color="#8B4513"></a-cylinder>
+            <a-sphere position="0 2.5 0" radius="1.2" color="#228B22"></a-sphere>
+        </a-entity>
+        
+        <!-- Rupees scattered around -->
+        <a-box position="-2 0.3 -1" width="0.2" height="0.8" depth="0.05" color="#00FF00" rotation="0 0 45"></a-box>
+        <a-box position="2 0.3 -1" width="0.2" height="0.8" depth="0.05" color="#0000FF" rotation="0 0 45"></a-box>
+        <a-box position="0 0.3 -4" width="0.2" height="0.8" depth="0.05" color="#FF0000" rotation="0 0 45"></a-box>
+        <a-box position="-3 0.3 -5" width="0.2" height="0.8" depth="0.05" color="#FFFF00" rotation="0 0 45"></a-box>
+        <a-box position="3 0.3 -5" width="0.2" height="0.8" depth="0.05" color="#FF00FF" rotation="0 0 45"></a-box>
         
         <!-- Heart container -->
-        <a-sphere position="4 1.5 -2" radius="0.3" color="#FF69B4"></a-sphere>
-        <a-sphere position="4.2 1.5 -2" radius="0.3" color="#FF69B4"></a-sphere>
-        <a-box position="4.1 1.2 -2" width="0.4" height="0.2" depth="0.1" color="#FF69B4"></a-box>
+        <a-entity position="5 0 -2">
+            <a-sphere position="0 1.5 0" radius="0.4" color="#FF69B4"></a-sphere>
+            <a-sphere position="0.3 1.5 0" radius="0.4" color="#FF69B4"></a-sphere>
+            <a-box position="0.15 1.1 0" width="0.6" height="0.3" depth="0.1" color="#FF69B4"></a-box>
+        </a-entity>
         
-        <!-- Starting position marker -->
-        <a-box position="0 0.5 -2" width="1" height="1" depth="1" color="#FFD700"></a-box>
+        <!-- Master Sword in stone -->
+        <a-entity position="-5 0 -2">
+            <a-cylinder position="0 0.5 0" radius="0.2" height="1" color="#696969"></a-cylinder>
+            <a-box position="0 1.5 0" width="0.1" height="1.5" depth="0.05" color="#C0C0C0"></a-box>
+            <a-box position="0 2.3 0" width="0.3" height="0.1" depth="0.05" color="#C0C0C0"></a-box>
+        </a-entity>
+        
+        <!-- Starting position -->
+        <a-box position="0 0.5 2" width="1" height="1" depth="1" color="#FFD700"></a-box>
+        
+        <!-- Lighting -->
+        <a-light type="directional" position="0 10 0" intensity="0.8" target="#temple"></a-light>
+        <a-light type="ambient" intensity="0.3"></a-light>
+        
     </a-scene>
 </body>
 </html>
