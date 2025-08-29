@@ -1,2 +1,2 @@
 # Meta Quest 3S example app
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/YOUR_USERNAME/quest-vr-space)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c9421daf-6b34-44e9-b4ca-7ef95247005d/deploy-status)](https://app.netlify.com/projects/chic-bienenstitch-cbd691/deploys)
